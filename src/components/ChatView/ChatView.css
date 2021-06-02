@@ -1,0 +1,150 @@
+.chat-container {
+	width: 70%;
+	height: 100%;
+	border: 1px solid rgb(226, 226, 226);
+	/* box-sizing: border-box; */
+	display: flex;
+	flex-direction: column;
+	--fg: rgb(123, 112, 222);
+	--fg-light: rgb(227, 226, 253);
+	--icon-default-color: rgb(169, 170, 191);
+}
+
+.chat-header {
+	padding: 20px 30px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	color: rgb(135, 135, 138);
+}
+
+.user-info {
+	display: flex;
+	gap: 13px;
+	align-items: center;
+}
+
+.profile-pic {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.chat-mode-button {
+	background: none;
+	border: none;
+	font-size: 30px;
+	margin-left: 15px;
+	cursor: pointer;
+}
+
+.unselected-mode-icon {
+	color: var(--icon-default-color);
+}
+
+.unselected-mode-icon:hover {
+	filter: brightness(80%);
+}
+
+.selected-mode-icon {
+	color: var(--fg);
+}
+
+.messages-container {
+	padding: 30px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	gap: 15px;
+	overflow-y: auto;
+}
+
+.message-container {
+	width: calc(100% - 60px);
+	display: flex;
+}
+
+.message-contents {
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	gap: 15px;
+}
+
+.user-msg-arrow {
+	border-bottom: 15px solid var(--fg);
+	border-right: 15px solid transparent;
+	position: absolute;
+	transform: translateX(13px) translateY(-100%);
+}
+
+.contact-msg-arrow {
+	border-bottom: 15px solid transparent;
+	border-right: 15px solid var(--fg-light);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	transform: translateX(30px) translateY(100%);
+}
+
+.message {
+	width: 100%;
+	border-radius: 3px;
+	padding: 25px;
+	display: flex;
+}
+
+.time-stamp {
+	color: rgb(184, 184, 184);
+	font-size: 14px;
+}
+
+.contact-msg {
+	flex-direction: row-reverse;
+}
+
+.user-msg .message {
+	background: var(--fg);
+	color: white;
+}
+
+.contact-msg .message {
+	background: rgb(227, 226, 253);
+	color: black;
+}
+
+.message-field-container {
+	padding: 20px;
+	background: rgb(245, 245, 245);
+	display: flex;
+	justify-content: space-between;
+}
+
+.message-field {
+	background: none;
+	border: none;
+	font-size: 15px;
+}
+
+.message-field:focus {
+	outline: none;
+	caret-color: var(--fg);
+}
+
+.message-field-controls {
+	color: var(--icon-default-color);
+	font-size: 30px;
+	display: flex;
+	gap: 18px;
+}
+
+.message-field-icon {
+	cursor: pointer;
+}
+
+.message-field-icon:hover {
+	filter: brightness(80%);
+}
