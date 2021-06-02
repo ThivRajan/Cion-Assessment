@@ -96,6 +96,7 @@
 	border-radius: 5px;
 	padding: 25px;
 	display: flex;
+	line-height: 25px;
 }
 
 .time-stamp {
