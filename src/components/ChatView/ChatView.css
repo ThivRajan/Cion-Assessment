@@ -1,13 +1,10 @@
 .chat-container {
-	width: 70%;
+	width: 65%;
 	height: 100%;
 	border: 1px solid rgb(226, 226, 226);
-	/* box-sizing: border-box; */
 	display: flex;
 	flex-direction: column;
-	--fg: rgb(123, 112, 222);
 	--fg-light: rgb(227, 226, 253);
-	--icon-default-color: rgb(169, 170, 191);
 }
 
 .chat-header {
@@ -127,6 +124,11 @@
 	background: none;
 	border: none;
 	font-size: 15px;
+	width: 100%;
+}
+
+.message-field::placeholder {
+	color: var(--icon-default-color);
 }
 
 .message-field:focus {

@@ -1,0 +1,34 @@
+.chat-list-container {
+	width: 35%;
+	height: 100%;
+	border: 1px solid rgb(226, 226, 226);
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.chat-search-container {
+	padding: 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 5px;
+	color: var(--icon-default-color);
+	font-size: 30px;
+}
+
+.chat-search-field {
+	background: none;
+	border: none;
+	font-size: 18px;
+	width: 100%;
+}
+
+.chat-search-field::placeholder {
+	color: var(--icon-default-color);
+}
+
+.chat-search-field:focus {
+	outline: none;
+	caret-color: var(--fg);
+}
