@@ -21,7 +21,6 @@ body {
 	display: flex;
 	justify-content: space-between;
 	padding: 5px 30px;
-
 }
 
 .user-details {
@@ -29,6 +28,7 @@ body {
 	color: var(--icon-default-color);
 	align-items: center;
 	gap: 12px;
+	font-weight: 500;
 }
 
 .user-profile-pic {
