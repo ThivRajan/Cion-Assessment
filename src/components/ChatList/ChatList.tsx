@@ -34,7 +34,26 @@ const initialChats = [
 		lastMessage: 'Some sample message Some sample messageSome sample message',
 		id: 2,
 		isUnread: true
-	}
+	},
+	{
+		senderPic: samplePic,
+		senderName: 'Joe Smith',
+		lastMessage: 'Some sample message Some sample messageSome sample message',
+		id: 3
+	},
+	{
+		senderPic: samplePic,
+		senderName: 'test',
+		lastMessage: 'Some sample message Some sample messageSome sample message',
+		id: 4
+	},
+	{
+		senderPic: samplePic,
+		senderName: 'Joe Smith',
+		lastMessage: 'Some sample message Some sample messageSome sample message',
+		id: 5,
+		isUnread: true
+	},
 ];
 
 const ChatList = (): JSX.Element => {
