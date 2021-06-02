@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useState } from 'react';
 import './ChatView.css';
 
 import { Icon } from '@iconify/react';
@@ -11,33 +11,33 @@ import chatCenteredTextFill from '@iconify-icons/ph/chat-centered-text-fill';
 import samplePic from '../../assets/sample-dp.png';
 
 interface Message {
-	content: string,
-	timeStamp: string,
-	senderIsUser: boolean,
-	isFirstMsg?: boolean,
-	isLastMsg?: boolean
+	content: string;
+	timeStamp: string;
+	senderIsUser: boolean;
+	isFirstMsg?: boolean;
+	isLastMsg?: boolean;
 }
 
 enum ChatMode {
-	Message = "message",
-	Video = "video",
-	Voice = "voice"
+	Message = 'message',
+	Video = 'video',
+	Voice = 'voice'
 }
 
 const ChatView = (): JSX.Element => {
 
-	const [chatMode, setChatMode] = useState<ChatMode>(ChatMode.Message)
+	const [chatMode, setChatMode] = useState<ChatMode>(ChatMode.Message);
 	const modeIcons = {
 		[ChatMode.Message]: formatChat,
 		[ChatMode.Video]: bxsVideo,
 		[ChatMode.Voice]: phoneIcon
-	}
+	};
 
 	const messages: Message[] = [
-		{ content: "yo!", timeStamp: "10:30am on Tue, Mar 23, 2015", senderIsUser: true, isFirstMsg: true, isLastMsg: true },
-		{ content: "testttt", timeStamp: "", senderIsUser: false },
-		{ content: "hello world", timeStamp: "", senderIsUser: false, isLastMsg: true },
-	]
+		{ content: 'yo!', timeStamp: '10:30am on Tue, Mar 23, 2015', senderIsUser: true, isFirstMsg: true, isLastMsg: true },
+		{ content: 'testttt', timeStamp: '', senderIsUser: false },
+		{ content: 'hello world', timeStamp: '', senderIsUser: false, isLastMsg: true },
+	];
 
 	return (
 		<div className="chat-container">
@@ -49,8 +49,8 @@ const ChatView = (): JSX.Element => {
 
 				<span className="chat-mode-controls">
 					{
-						Object.values(ChatMode).map(mode =>
-							<button onClick={() => setChatMode(mode)} className="chat-mode-button">
+						Object.values(ChatMode).map((mode, idx) =>
+							<button key={idx} onClick={() => setChatMode(mode)} className="chat-mode-button">
 								<Icon
 									icon={modeIcons[mode]}
 									className={chatMode === mode ? 'selected-mode-icon' : 'unselected-mode-icon'}
@@ -61,7 +61,7 @@ const ChatView = (): JSX.Element => {
 				</span>
 			</div>
 			<div className="messages-container">
-				{messages.map(message => <MessageView message={message} />)}
+				{messages.map((message, idx) => <MessageView key={idx} message={message} />)}
 			</div>
 			<div className="message-field-container">
 				<input className="message-field" type="text" placeholder="Write a message...">
@@ -83,7 +83,7 @@ const MessageView: FC<{ message: Message }> = ({ message }): JSX.Element => {
 					message.senderIsUser && message.isFirstMsg &&
 					<div className="user-msg-arrow"></div>
 				}
-				<div className={`message`}>
+				<div className={'message'}>
 					{message.content}
 				</div>
 				{
@@ -96,7 +96,7 @@ const MessageView: FC<{ message: Message }> = ({ message }): JSX.Element => {
 				}
 			</div>
 		</div>
-	)
-}
+	);
+};
 
 export default ChatView;
