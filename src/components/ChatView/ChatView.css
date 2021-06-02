@@ -75,14 +75,14 @@
 	gap: 15px;
 }
 
-.user-msg-arrow {
+.contact-msg-arrow {
 	border-bottom: 15px solid var(--fg);
 	border-right: 15px solid transparent;
 	position: absolute;
 	transform: translateX(13px) translateY(-100%);
 }
 
-.contact-msg-arrow {
+.user-msg-arrow {
 	border-bottom: 15px solid transparent;
 	border-right: 15px solid var(--fg-light);
 	position: absolute;
@@ -103,16 +103,16 @@
 	font-size: 14px;
 }
 
-.contact-msg {
+.user-msg {
 	flex-direction: row-reverse;
 }
 
-.user-msg .message {
+.contact-msg .message {
 	background: var(--fg);
 	color: white;
 }
 
-.contact-msg .message {
+.user-msg .message {
 	background: var(--fg-light);
 	color: black;
 }

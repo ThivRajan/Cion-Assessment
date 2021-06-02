@@ -11,7 +11,7 @@ import chatCenteredTextFill from '@iconify-icons/ph/chat-centered-text-fill';
 interface Message {
 	content: string;
 	timeStamp?: string;
-	senderIsUser: boolean;
+	senderIsContact: boolean;
 	isFirstMsg?: boolean;
 	isLastMsg?: boolean;
 }
@@ -37,15 +37,15 @@ const ChatView: FC<{
 		};
 
 		const messages: Message[] = [
-			{ content: 'Hi!', senderIsUser: false, isFirstMsg: true, isLastMsg: true },
-			{ content: 'Hello!', senderIsUser: true, isFirstMsg: true, isLastMsg: true },
-			{ content: 'How are you?', senderIsUser: false, isFirstMsg: true, isLastMsg: true },
-			{ content: 'Not bad.', senderIsUser: true, isFirstMsg: true },
-			{ content: 'How about you', senderIsUser: true, isLastMsg: true },
-			{ content: 'Nice!', senderIsUser: false, isLastMsg: false },
-			{ content: 'I am doing good.', senderIsUser: false, isLastMsg: true },
-			{ content: 'Cool.', timeStamp: '10:30am on Tue, Mar 23, 2015', senderIsUser: true, isFirstMsg: true, isLastMsg: true },
-			{ content: contactMessage, senderIsUser: false, isFirstMsg: true, isLastMsg: true },
+			{ content: 'Hi!', senderIsContact: false, isFirstMsg: true, isLastMsg: true },
+			{ content: 'Hello!', senderIsContact: true, isFirstMsg: true, isLastMsg: true },
+			{ content: 'How are you?', senderIsContact: false, isFirstMsg: true, isLastMsg: true },
+			{ content: 'Not bad.', senderIsContact: true, isFirstMsg: true },
+			{ content: 'How about you', senderIsContact: true, isLastMsg: true },
+			{ content: 'Nice!', senderIsContact: false, isLastMsg: false },
+			{ content: 'I am doing good.', senderIsContact: false, isLastMsg: true },
+			{ content: 'Cool.', timeStamp: '10:30am on Tue, Mar 23, 2015', senderIsContact: true, isFirstMsg: true, isLastMsg: true },
+			{ content: contactMessage, senderIsContact: false, isFirstMsg: true, isLastMsg: true },
 		];
 
 		return (
@@ -86,19 +86,19 @@ const ChatView: FC<{
 const MessageView: FC<{ message: Message }> = ({ message }): JSX.Element => {
 	return (
 		<div className={`message-container 
-				${message.senderIsUser ? 'user-msg' : 'contact-msg'}
+				${message.senderIsContact ? 'contact-msg' : 'user-msg'}
 				${message.isLastMsg && 'last-msg'}`}>
 			<div className='message-contents'>
 				{
-					message.senderIsUser && message.isFirstMsg &&
-					<div className="user-msg-arrow"></div>
+					message.senderIsContact && message.isFirstMsg &&
+					<div className="contact-msg-arrow"></div>
 				}
 				<div className={'message'}>
 					{message.content}
 				</div>
 				{
-					!message.senderIsUser && message.isLastMsg &&
-					<div className="contact-msg-arrow"></div>
+					!message.senderIsContact && message.isLastMsg &&
+					<div className="user-msg-arrow"></div>
 				}
 				{
 					message.timeStamp &&
