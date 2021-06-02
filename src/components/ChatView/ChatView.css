@@ -103,6 +103,7 @@
 	padding: 25px;
 	display: flex;
 	line-height: 25px;
+	font-size: 15px;
 }
 
 .time-stamp {
