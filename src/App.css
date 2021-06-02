@@ -1,6 +1,13 @@
+body {
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+
 .App {
 	width: 100%;
-	height: 97vh;
+	height: 100vh;
+	overflow-y: hidden;
 	font-family: sans-serif;
 	display: flex;
 
