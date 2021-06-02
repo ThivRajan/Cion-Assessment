@@ -37,8 +37,8 @@ const ChatView: FC<{
 		};
 
 		const messages: Message[] = [
-			{ content: 'Hi!', senderIsContact: false, isFirstMsg: true, isLastMsg: true },
-			{ content: 'Hello!', senderIsContact: true, isFirstMsg: true, isLastMsg: true },
+			{ content: 'Hey!', senderIsContact: false, isFirstMsg: true, isLastMsg: true },
+			{ content: 'Yo!', senderIsContact: true, isFirstMsg: true, isLastMsg: true },
 			{ content: 'How are you?', senderIsContact: false, isFirstMsg: true, isLastMsg: true },
 			{ content: 'Not bad.', senderIsContact: true, isFirstMsg: true },
 			{ content: 'How about you', senderIsContact: true, isLastMsg: true },

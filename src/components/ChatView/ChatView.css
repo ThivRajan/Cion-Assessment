@@ -4,6 +4,7 @@
 	border: 1px solid rgb(226, 226, 226);
 	display: flex;
 	flex-direction: column;
+	color: var(--black);
 	--fg-light: rgb(234, 234, 250);
 }
 
@@ -12,14 +13,19 @@
 	box-sizing: border-box;
 	display: flex;
 	justify-content: space-between;
-	color: rgb(135, 135, 138);
+	/* color: rgb(135, 135, 138); */
 }
 
 .user-info {
 	display: flex;
 	gap: 13px;
 	align-items: center;
+	font-weight: 600;
 }
+
+/* .user-info>span {
+	font-weight: 500;
+} */
 
 .profile-pic {
 	width: 50px;
@@ -115,11 +121,10 @@
 
 .user-msg .message {
 	background: var(--fg-light);
-	color: black;
 }
 
 .message-field-container {
-	padding: 20px;
+	padding: 30px;
 	background: rgb(245, 245, 245);
 	display: flex;
 	justify-content: space-between;
@@ -128,12 +133,17 @@
 .message-field {
 	background: none;
 	border: none;
-	font-size: 15px;
+	font-size: 16px;
 	width: 100%;
+	font-family: Spartan;
+	font-weight: 500;
+	color: var(--black);
 }
 
 .message-field::placeholder {
 	color: var(--icon-default-color);
+	font-family: Spartan;
+	font-weight: 500;
 }
 
 .message-field:focus {
