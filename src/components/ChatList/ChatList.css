@@ -2,8 +2,6 @@
 	width: 400px;
 	height: 100%;
 	border: 1px solid rgb(226, 226, 226);
-	overflow-y: auto;
-	overflow-x: hidden;
 	display: flex;
 	flex-direction: column;
 }
@@ -37,6 +35,11 @@
 .new-chat-icon:hover {
 	cursor: pointer;
 	filter: brightness(80%);
+}
+
+.chat-list {
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .chat-preview-container {
