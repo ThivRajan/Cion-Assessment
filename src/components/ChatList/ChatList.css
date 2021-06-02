@@ -88,6 +88,6 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	max-width: 45%;
+	max-width: 225px;
 	font-weight: 200;
 }

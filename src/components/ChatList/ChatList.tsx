@@ -1,65 +1,16 @@
 import './ChatList.css';
 import { Dispatch, FC, useState } from 'react';
-
 import { Icon } from '@iconify/react';
 import searchIcon from '@iconify-icons/line-md/search';
 import chatNewFill from '@iconify-icons/ri/chat-new-fill';
+import Chat from '../../models/Chat';
 
-import userPic from '../../assets/user.png';
-
-interface Chat {
-	senderPic: string;
-	senderName: string;
-	lastMessage: string;
-	isUnread?: boolean;
-	id: number;
-}
-
-const initialChats = [
-	{
-		senderPic: userPic,
-		senderName: 'Joe Smith',
-		lastMessage: 'Some sample message Some sample messageSome sample message',
-		id: 0
-	},
-	{
-		senderPic: userPic,
-		senderName: 'test',
-		lastMessage: 'Some sample message Some sample messageSome sample message',
-		id: 1
-	},
-	{
-		senderPic: userPic,
-		senderName: 'Joe Smith',
-		lastMessage: 'Some sample message Some sample messageSome sample message',
-		id: 2,
-		isUnread: true
-	},
-	{
-		senderPic: userPic,
-		senderName: 'Joe Smith',
-		lastMessage: 'Some sample message Some sample messageSome sample message',
-		id: 3
-	},
-	{
-		senderPic: userPic,
-		senderName: 'test',
-		lastMessage: 'Some sample message Some sample messageSome sample message',
-		id: 4
-	},
-	{
-		senderPic: userPic,
-		senderName: 'Joe Smith',
-		lastMessage: 'Some sample message Some sample messageSome sample message',
-		id: 5,
-		isUnread: true
-	},
-];
-
-const ChatList = (): JSX.Element => {
-
-	const [chats, setChats] = useState<Chat[]>(initialChats);
-	const [selectedChat, setSelectedChat] = useState(0);
+const ChatList: FC<{
+	chats: Chat[];
+	setChats: Dispatch<React.SetStateAction<Chat[]>>;
+	selectedChat: number;
+	setSelectedChat: Dispatch<React.SetStateAction<number>>;
+}> = ({ chats, setChats, selectedChat, setSelectedChat }): JSX.Element => {
 	const [chatFilter, setChatFilter] = useState('');
 
 	return (
@@ -81,8 +32,9 @@ const ChatList = (): JSX.Element => {
 						.map((filteredChat, idx) => {
 							if (filteredChat.id === selectedChat && filteredChat.isUnread) {
 								const readChat = chats.find(chat => chat.id === filteredChat.id) as Chat;
-								readChat.isUnread = false;
-								setChats(chats.filter(chat => chat.id !== readChat.id).concat(readChat));
+								const updatedChats = chats;
+								updatedChats[updatedChats.indexOf(readChat)] = { ...readChat, isUnread: false };
+								setChats(updatedChats);
 							}
 							return <ChatPreview
 								key={idx}
@@ -90,8 +42,7 @@ const ChatList = (): JSX.Element => {
 								isSelected={filteredChat.id === selectedChat}
 								selectChat={setSelectedChat}
 							/>;
-						}
-						)
+						})
 				}
 			</div>
 		</div>
