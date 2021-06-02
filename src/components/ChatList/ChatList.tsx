@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react';
 import searchIcon from '@iconify-icons/line-md/search';
 import chatNewFill from '@iconify-icons/ri/chat-new-fill';
 
-import samplePic from '../../assets/sample-dp.png';
+import userPic from '../../assets/user.png';
 
 interface Chat {
 	senderPic: string;
@@ -17,38 +17,38 @@ interface Chat {
 
 const initialChats = [
 	{
-		senderPic: samplePic,
+		senderPic: userPic,
 		senderName: 'Joe Smith',
 		lastMessage: 'Some sample message Some sample messageSome sample message',
 		id: 0
 	},
 	{
-		senderPic: samplePic,
+		senderPic: userPic,
 		senderName: 'test',
 		lastMessage: 'Some sample message Some sample messageSome sample message',
 		id: 1
 	},
 	{
-		senderPic: samplePic,
+		senderPic: userPic,
 		senderName: 'Joe Smith',
 		lastMessage: 'Some sample message Some sample messageSome sample message',
 		id: 2,
 		isUnread: true
 	},
 	{
-		senderPic: samplePic,
+		senderPic: userPic,
 		senderName: 'Joe Smith',
 		lastMessage: 'Some sample message Some sample messageSome sample message',
 		id: 3
 	},
 	{
-		senderPic: samplePic,
+		senderPic: userPic,
 		senderName: 'test',
 		lastMessage: 'Some sample message Some sample messageSome sample message',
 		id: 4
 	},
 	{
-		senderPic: samplePic,
+		senderPic: userPic,
 		senderName: 'Joe Smith',
 		lastMessage: 'Some sample message Some sample messageSome sample message',
 		id: 5,

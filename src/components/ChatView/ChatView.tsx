@@ -8,7 +8,7 @@ import phoneIcon from '@iconify-icons/fa-solid/phone';
 import micSharp from '@iconify-icons/ion/mic-sharp';
 import chatCenteredTextFill from '@iconify-icons/ph/chat-centered-text-fill';
 
-import samplePic from '../../assets/sample-dp.png';
+import userPic from '../../assets/user.png';
 
 interface Message {
 	content: string;
@@ -49,7 +49,7 @@ const ChatView = (): JSX.Element => {
 		<div className="chat-container">
 			<div className="chat-header">
 				<span className="user-info">
-					<img src={samplePic} alt="sample-pic" className="profile-pic" />
+					<img src={userPic} alt="sample-pic" className="profile-pic" />
 					<span>Thiv</span>
 				</span>
 
