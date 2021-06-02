@@ -12,7 +12,7 @@ body {
 	display: flex;
 	flex-direction: column;
 
-	--fg: rgb(123, 112, 222);
+	--fg: rgb(151, 141, 241);
 	--icon-default-color: rgb(177, 177, 177);
 }
 
