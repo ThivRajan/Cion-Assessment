@@ -1,8 +1,9 @@
 .chat-list-container {
-	width: 35%;
+	width: 400px;
 	height: 100%;
 	border: 1px solid rgb(226, 226, 226);
 	overflow-y: auto;
+	overflow-x: hidden;
 	display: flex;
 	flex-direction: column;
 }
@@ -31,4 +32,59 @@
 .chat-search-field:focus {
 	outline: none;
 	caret-color: var(--fg);
+}
+
+.new-chat-icon:hover {
+	cursor: pointer;
+	filter: brightness(80%);
+}
+
+.chat-preview-container {
+	display: flex;
+	padding: 20px 30px;
+	gap: 15px;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+.chat-preview-container:hover {
+	background: rgb(245, 245, 245);
+}
+
+.selected-chat {
+	background: rgb(245, 245, 245);
+}
+
+.sender-profile-pic {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+.chat-sender {
+	font-weight: 400;
+}
+
+.unread-chat-sender {
+	font-weight: 600;
+	color: var(--fg);
+}
+
+.read-chat-msg {
+	color: var(--icon-default-color);
+}
+
+.chat-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5px;
+}
+
+.chat-last-msg {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 45%;
+	font-weight: 200;
 }
