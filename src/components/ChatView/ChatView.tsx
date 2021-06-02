@@ -37,6 +37,12 @@ const ChatView = (): JSX.Element => {
 		{ content: 'yo!', timeStamp: '10:30am on Tue, Mar 23, 2015', senderIsUser: true, isFirstMsg: true, isLastMsg: true },
 		{ content: 'testttt', timeStamp: '', senderIsUser: false },
 		{ content: 'hello world', timeStamp: '', senderIsUser: false, isLastMsg: true },
+		{ content: 'yo!', timeStamp: '10:30am on Tue, Mar 23, 2015', senderIsUser: true, isFirstMsg: true, isLastMsg: true },
+		{ content: 'testttt', timeStamp: '', senderIsUser: false },
+		{ content: 'hello world', timeStamp: '', senderIsUser: false, isLastMsg: true },
+		{ content: 'yo!', timeStamp: '10:30am on Tue, Mar 23, 2015', senderIsUser: true, isFirstMsg: true, isLastMsg: true },
+		{ content: 'testttt', timeStamp: '', senderIsUser: false },
+		{ content: 'hello world', timeStamp: '', senderIsUser: false, isLastMsg: true },
 	];
 
 	return (
@@ -64,8 +70,7 @@ const ChatView = (): JSX.Element => {
 				{messages.map((message, idx) => <MessageView key={idx} message={message} />)}
 			</div>
 			<div className="message-field-container">
-				<input className="message-field" type="text" placeholder="Write a message...">
-				</input>
+				<input className="message-field" type="text" placeholder="Write a message..." />
 				<span className="message-field-controls">
 					<Icon icon={micSharp} className="message-field-icon" />
 					<Icon icon={chatCenteredTextFill} className="message-field-icon" />
